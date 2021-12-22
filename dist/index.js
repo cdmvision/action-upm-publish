@@ -2985,7 +2985,7 @@ async function run() {
 
     core.info('Check package version');
     const isVersionExist = await exec.exec('git', ['ls-remote', '--exit-code', '--tags', 'origin', packageVersion]);
-    if (isVersionExist)
+    if (isVersionExist == 0)
       throw 'Same version already exists: ' + packageVersion;
 
     core.info('Commit changes to upm branch');
@@ -2993,7 +2993,7 @@ async function run() {
     if (returnValue != 0)
       throw 'Commit changes to upm [' + upmBranch + '] branch failed: ' + string(returnValue);
 
-    core.info(util.format('Create version tag with: %s', packageVersion));
+    core.info('Create version tag with: ' + packageVersion);
     returnValue = await exec.exec('git', ['tag', packageVersion, upmBranch]);
     if (returnValue != 0)
       throw 'Creating version tag [' + packageVersion + '] failed: ' + string(returnValue);
