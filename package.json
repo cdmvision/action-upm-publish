@@ -1,7 +1,7 @@
 {
   "name": "upm-publish-action",
   "version": "1.0.0",
-  "description": "unity Package Publish Action",
+  "description": "Unity Package Publish Action",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -18,14 +18,15 @@
     "Actions",
     "JavaScript"
   ],
-  "author": "",
+  "author": "CDMVision",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cdmvision/action-upm-publish/issues"
   },
   "homepage": "https://github.com/cdmvision/action-upm-publish#readme",
   "dependencies": {
-    "@actions/core": "^1.2.5"
+    "@actions/core": "^1.2.5",
+    "@actions/exec": "^1.0.0"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.31.1",
