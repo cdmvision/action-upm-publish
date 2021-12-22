@@ -1,13 +1,13 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Unity Package Publish'
+description: 'Publish unity package using package.json'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  name:  # name of the package
+    description: 'Package name i.e. com.mycompany.mypackage'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  upmBranch:
+    description: 'UPM branch to publish the package'
+    required: true
+    default: 'upm'
 runs:
   using: 'node12'
   main: 'dist/index.js'
