@@ -2976,7 +2976,7 @@ async function run() {
     const packageName = core.getInput('name');
     const upmBranch = core.getInput('upmBranch');
     
-    const packageJsonBuffer = await fs.readFileAsync('Packages/' + packageName + '/package.json', {encoding:'utf8', flag:'r'});
+    const packageJsonBuffer = fs.readFileSync('Packages/' + packageName + '/package.json', {encoding:'utf8', flag:'r'});
     const packageJson = JSON.parse(packageJsonBuffer.toString());
     const packageVersion = packageJson.version;
 
