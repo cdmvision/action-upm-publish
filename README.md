@@ -18,6 +18,8 @@ Use the action inside your workflow yaml file like this:
 
 ```
 
+See [real world example](https://github.com/ibrahimpenekli/GameToolkit-Localization/blob/develop/.github/workflows/deploy-upm.yml).
+
 ## Input Parameters
 
 * **name:** Name of the package from Packages/package.json
