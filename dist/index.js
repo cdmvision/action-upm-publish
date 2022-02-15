@@ -2980,7 +2980,7 @@ async function run() {
 
     const packageJsonBuffer = fs.readFileSync('Packages/' + packageName + '/package.json', {encoding:'utf8', flag:'r'});
     const packageJson = JSON.parse(packageJsonBuffer.toString());
-    const packageVersion = packageJson.version;
+    var packageVersion = packageJson.version;
 
     if (!(packageVersion && packageVersion.length !== 0))
       throw new Error('Package version is empty.');
