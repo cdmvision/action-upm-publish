@@ -10,7 +10,7 @@ inputs:
     default: 'upm'
   versionPostfix:
     description: 'Version postfix'
-    required: false
+    required: true
     default: ''
 runs:
   using: 'node12'
