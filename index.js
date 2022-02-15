@@ -6,6 +6,7 @@ async function run() {
   try {
     const packageName = core.getInput('name');
     const upmBranch = core.getInput('upmBranch');
+    const versionPostfix = core.getInput('versionPostfix');
     const execOptions = {ignoreReturnCode:true};
 
     const packageJsonBuffer = fs.readFileSync('Packages/' + packageName + '/package.json', {encoding:'utf8', flag:'r'});
@@ -14,6 +15,9 @@ async function run() {
 
     if (!(packageVersion && packageVersion.length !== 0))
       throw new Error('Package version is empty.');
+
+    if (versionPostfix && versionPostfix.length !== 0)
+      packageVersion = packageVersion + '-' + versionPostfix;
 
     core.info('Check package version');
     const isVersionExist = await exec.exec('git', ['ls-remote', '--exit-code', '--tags', 'origin', packageVersion], execOptions);

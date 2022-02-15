@@ -8,6 +8,10 @@ inputs:
     description: 'UPM branch to publish the package'
     required: true
     default: 'upm'
+  versionPostfix:
+    description: 'Version postfix'
+    required: false
+    default: ''
 runs:
   using: 'node12'
   main: 'dist/index.js'

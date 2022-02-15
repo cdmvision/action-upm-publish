@@ -24,3 +24,4 @@ See [real world example](https://github.com/ibrahimpenekli/GameToolkit-Localizat
 
 * **name:** Name of the package from Packages/package.json
 * **upmBranch:** Name of the branch that the package will be published. (Default: 'upm')
+* **versionPostfix:** This will be added end of the version string. i.e. 1.5.0-postfix (Default: '')
